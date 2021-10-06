@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve": "node server/bin/www"
+    "serve": "node server/bin/www",
+    "heroku-postbuild": "npm run start && npm run serve"
   },
   "private": true,
   "dependencies": {
