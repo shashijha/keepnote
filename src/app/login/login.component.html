@@ -1,0 +1,51 @@
+<label class="error-message">{{ submitMessage }}</label>
+<div class="login-container">
+  <form  (ngSubmit)="loginSubmit()">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              class="username"
+              name="username"
+              type="text"
+              placeholder="username"
+              [formControl]='username'
+              required
+            />
+          </mat-form-field>
+          <mat-error *ngIf="username.errors && username.dirty && username.errors.required">
+            Username is required field !!!
+          </mat-error>
+          <mat-error *ngIf="username.errors && username.dirty && username.errors.minlength">
+            Username must be of 5 characters !!!
+          </mat-error>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              matInput
+              class="password"
+              name="password"
+              type="password"
+              placeholder="password"
+              [formControl]='password'
+              required
+            />
+          </mat-form-field>
+          <mat-error *ngIf="password.errors && password.dirty && password.errors.required">
+            password is required field !!!
+          </mat-error>
+          <mat-error *ngIf="password.errors && password.dirty && password.errors.minlength">
+            password must be of 5 characters !!!
+          </mat-error>
+        </div>
+        <button [disabled]="!password.valid || !username.valid" type="submit" mat-button>Submit</button>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
