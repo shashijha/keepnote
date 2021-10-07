@@ -19,10 +19,10 @@ function generateApp(inputApp) {
     next();
   });
 
-   app.use(requireHTTPS);
-  app.use(express.static('./dist'));
+  app.use(requireHTTPS);
+  app.use(express.static('./dist/keepnote'));
   app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: './dist/'}
+    res.sendFile('index.html', {root: './dist/keepnote/'}
   );
   });
   // app.use(require('./api'));
