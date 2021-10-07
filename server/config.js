@@ -4,6 +4,6 @@ module.exports = {
     stranger: {password: 'password', scopes: 'notes:all notes:read'.split(' ')}
   },
   jwtSecret: '08098grrgaorugh',
-  port: 3000,
+  port: 8080,
   enableAuth: true
 }
