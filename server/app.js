@@ -20,12 +20,12 @@ function generateApp(inputApp) {
   });
 
   // app.use(requireHTTPS);
-  app.use(express.static('./dist/keepnote'));
+  app.use(express.static('./dist'));
   app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: './dist/keepnote/'}
+    res.sendFile('index.html', {root: './dist/'}
   );
   });
-  app.use(require('./api'));
+  // app.use(require('./api'));
 
   return app;
 }
